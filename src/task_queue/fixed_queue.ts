@@ -64,9 +64,6 @@ class FixedCircularBuffer {
   list: Array<Task | undefined> = new Array(kSize)
   next: FixedCircularBuffer | null = null
 
-  constructor () {
-  }
-
   isEmpty () {
     return this.top === this.bottom;
   }
