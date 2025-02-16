@@ -59,16 +59,12 @@ const kMask = kSize - 1;
 // but allows much quicker checks.
 
 class FixedCircularBuffer {
-  bottom: number
-  top: number
-  list: Array<Task | undefined>
-  next: FixedCircularBuffer | null
+  bottom: number = 0
+  top: number = 0
+  list: Array<Task | undefined> = new Array(kSize)
+  next: FixedCircularBuffer | null = null
 
   constructor () {
-    this.bottom = 0;
-    this.top = 0;
-    this.list = new Array(kSize);
-    this.next = null;
   }
 
   isEmpty () {
